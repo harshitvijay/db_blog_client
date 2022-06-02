@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 20px 40px;
+  overflow-x: hidden;
+  font-family: "Encode Sans Condensed", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body ::-webkit-scrollbar {
+  width: 1em;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
