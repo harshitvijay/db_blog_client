@@ -4,13 +4,16 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { UserProvider } from "./contexts/user.context";
+import { BlogProvider } from "./contexts/blogs.context";
 import "./index.scss";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <BlogProvider>
+          <App />
+        </BlogProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,

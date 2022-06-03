@@ -1,0 +1,24 @@
+.introduction {
+  font-size: 1.25rem;
+  display: var(--layout);
+  grid-row-gap: var(--spacing-default);
+  grid-column: 2 / span 8;
+  margin-bottom: var(--spacing-double);
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.introduction > * {
+  margin: 1rem;
+}
+
+@media (max-width: 75em) {
+  article .introduction {
+    font-size: 1.125rem;
+    grid-column: 2 / -4;
+  }
+}

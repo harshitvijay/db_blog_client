@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 import {
@@ -19,6 +20,7 @@ const SignInForm = () => {
   const { username, password, security_que, security_ans } = formFields;
   const [show, setShow] = useState(false);
   const { setCurrentUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -47,7 +49,6 @@ const SignInForm = () => {
         }
       } else {
         if (username && security_que && security_ans) {
-          console.log(1);
           const response = await verifyUserBy2fa({
             username,
             security_que,
@@ -59,6 +60,7 @@ const SignInForm = () => {
             alert(response.message);
             setShow(false);
             resetFormField();
+            navigate("/blogs");
           }
         }
       }
