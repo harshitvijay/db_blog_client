@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseApiUrl, baseApiUrlTest } from "../../constant";
+import { baseApiUrl } from "../../constant";
 
 export const createUser = async (user) => {
   try {
@@ -52,6 +52,70 @@ export const getBlogDetails = async (id) => {
       Authorization: sessionStorage.getItem("token"),
     };
     const response = await axios.get(`${baseApiUrl}/api/blogs/${id}`, {
+      headers,
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const addBlog = async (blog) => {
+  try {
+    const headers = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    const response = await axios.post(
+      `${baseApiUrl}/api/users/${blog.user_id}/blogs`,
+      blog,
+      {
+        headers,
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getUsersBlogs = async (id) => {
+  try {
+    const headers = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    const response = await axios.get(`${baseApiUrl}/api/users/${id}/blogs`, {
+      headers,
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateBlog = async (id, changes) => {
+  try {
+    const headers = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    const response = await axios.patch(
+      `${baseApiUrl}/api/blogs/${id}`,
+      changes,
+      {
+        headers,
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteBlog = async (id) => {
+  try {
+    const headers = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    const response = await axios.delete(`${baseApiUrl}/api/blogs/${id}`, {
       headers,
     });
     return response.data;

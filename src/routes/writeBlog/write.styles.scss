@@ -1,0 +1,65 @@
+.write-page {
+  width: 100%;
+}
+.write-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  h2 {
+    margin: 10px 0;
+  }
+}
+.write-buttons-container {
+  display: flex;
+}
+.btn-wrapper {
+  margin: 1rem;
+  margin-left: 0;
+}
+
+.blog-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  background-color: lightgray;
+  border: 2px soild black;
+  border-radius: 20px;
+}
+.blog-data {
+  margin: 1rem;
+}
+.blog-data-btn {
+  display: flex;
+}
+.blog-btn {
+  margin: 0.5rem;
+}
+.my-blogs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.btn_primary {
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  padding: 0.2rem;
+  border-radius: 50px;
+  color: white;
+  font-size: 0.5rem;
+  box-shadow: 1px 10px 2rem rgba(255, 94, 98, 0.5);
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+
+.btn_primary:hover {
+  box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
+}
+
+.card-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -14px;
+}

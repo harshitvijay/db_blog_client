@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { UserContext } from "./user.context";
 import { getAllBlogs } from "../utils/database-utils/dbHelpers";
 
@@ -13,14 +13,16 @@ export const BlogProvider = ({ children }) => {
   const value = { allBlogs, setAllBlogs };
   const { currentUser } = useContext(UserContext);
 
-  setInterval(async () => {
-    if (currentUser) {
-      const response = await getAllBlogs();
-      if (response.success) {
-        setAllBlogs(response.data);
+  useEffect(() => {
+    setInterval(async () => {
+      if (currentUser) {
+        const response = await getAllBlogs();
+        if (response.success) {
+          setAllBlogs(response.data);
+        }
       }
-    }
-  }, 60000);
+    }, 60000);
+  }, [currentUser]);
 
   return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
 };

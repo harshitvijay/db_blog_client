@@ -45,6 +45,18 @@ const Navigation = () => {
               BLOGS
             </Link>
           )}
+          {currentUser &&
+            (currentUser.role === "admin" ||
+              currentUser.role === "super admin") && (
+              <Link className="nav-link" to="/write">
+                WRITE
+              </Link>
+            )}
+          {currentUser && currentUser.role === "super admin" && (
+            <Link className="nav-link" to="/publish">
+              PUBLISH
+            </Link>
+          )}
           {currentUser ? (
             <span className="nav-link" onClick={signOutUser}>
               SIGN OUT
@@ -54,7 +66,6 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
-          {/* {isCartOpen && <CartDropdown />} */}
         </div>
       </div>
       <Outlet />
